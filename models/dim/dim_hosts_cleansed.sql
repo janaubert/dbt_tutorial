@@ -1,3 +1,10 @@
+{{
+    config(
+        materialized = 'view',
+        on_schema_change = 'fail'
+        )
+}}
+
 WITH src_hosts AS (
     SELECT * FROM {{ ref('src_hosts')}}
     )
